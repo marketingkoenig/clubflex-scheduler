@@ -3,7 +3,7 @@ name: ClubFlex background jobs
 on:
   schedule:
     # Offset from the top of the hour to reduce GitHub scheduling congestion.
-    - cron: "0,5,10,15,20,25,30,35,40,45,50,55 * * * *"
+    - cron: "2,7,12,17,22,27,32,37,42,47,52,57 * * * *"
     # A monthly repository heartbeat prevents public schedules from becoming
     # inactive after 60 days without repository activity.
     - cron: "17 4 1 * *"
@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   scheduler:
-    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0,5,10,15,20,25,30,35,40,45,50,55 * * * *'
+    if: github.event_name == 'workflow_dispatch' || github.event.schedule == '2,7,12,17,22,27,32,37,42,47,52,57 * * * *'
     runs-on: ubuntu-latest
     timeout-minutes: 3
     permissions: {}
